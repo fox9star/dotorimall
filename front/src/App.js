@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './styles/style.css';
+import Layout from './layouts/Layout';
+
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Main from './pages/main';
+import Product from './pages/products/productView';
+// import Product from './Product'; <Main>여기에 상품 목록 뿌려주기</Main>
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+      <Layout>
+
+        <Routes>
+					<Route path="/" element={<Main />}></Route>
+          <Route path="/products/:productId" element={<Product />}></Route>
+        </Routes>
+			
+        
+      </Layout>
+      </BrowserRouter>
     </div>
-  );
+  )
 }
 
 export default App;
