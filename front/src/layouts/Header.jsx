@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import imgLogo from '../assets/images/logo.png';
-import Login from "../pages/login/login"
-
+//import Login from "../pages/login/login"
+import { Link } from 'react-router-dom';
 //<ul><li><a href={login}>로그인</a></li></ul>
 
 
@@ -11,7 +11,9 @@ const Header = () => {
             <header className="header">
                 <div className="topMenu">
                     <Container>
-                    <ul><li><a href="#">로그인</a></li></ul>
+                    <ul>
+                        <li><Link to="/login/login">로그인</Link></li>
+                    </ul>
                     </Container>
                 </div>
                 <div className="headerArea">
